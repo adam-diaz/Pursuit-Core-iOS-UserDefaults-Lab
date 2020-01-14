@@ -10,8 +10,7 @@
         <!--Horoscopes-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <viewController title="Horoscopes" id="BYZ-38-t0r" customClass="HoroscopeVC" customModule="UserDefaults_Lab" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HoroscopeVC" customModule="UserDefaults_Lab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,6 +53,7 @@
                                             <outlet property="dateLabel" destination="ZJ4-bQ-Uqz" id="Ldq-o7-XdC"/>
                                             <outlet property="moodLabel" destination="2Uk-cn-amh" id="1Su-NJ-vly"/>
                                             <outlet property="sunLabel" destination="7Ql-Ag-0Vz" id="a0T-Bd-u8H"/>
+                                            <segue destination="OZ9-4I-ufR" kind="show" id="kOf-Is-nBi"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -69,66 +69,69 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Horoscopes" id="627-c2-6B2">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="lj3-v0-PTq">
-                            <connections>
-                                <segue destination="QZd-Jf-HdF" kind="presentation" id="KwF-lk-Bff"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="lj3-v0-PTq"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="vNK-tF-5bP" id="RYU-Y0-BFS"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="126.5625"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="FPM-qI-M6M">
+        <!--Detail View Controller-->
+        <scene sceneID="khI-RT-WId">
             <objects>
-                <tableViewController id="QZd-Jf-HdF" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kdi-pL-Sje">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                <viewController id="OZ9-4I-ufR" customClass="DetailViewController" customModule="UserDefaults_Lab" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="w8t-Xt-pkX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sunsign" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1X6-9C-aY1">
+                                <rect key="frame" x="20" y="183" width="374" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mood" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObF-zp-i12">
+                                <rect key="frame" x="20" y="273" width="374" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2Q1-oJ-IR4">
+                                <rect key="frame" x="20" y="384" width="374" height="429"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Intensity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAm-Ms-JJ8">
+                                <rect key="frame" x="20" y="340" width="374" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <sections>
-                            <tableViewSection id="3o7-YJ-ucd">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="48" id="E6i-7j-CTs">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="48"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E6i-7j-CTs" id="sGl-g3-EJl">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="48" id="0NS-nj-nGx">
-                                        <rect key="frame" x="0.0" y="76" width="414" height="48"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0NS-nj-nGx" id="Hkc-Yb-Zca">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="48" id="R4H-Px-4MF">
-                                        <rect key="frame" x="0.0" y="124" width="414" height="48"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R4H-Px-4MF" id="Oy8-bG-hbF">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="QZd-Jf-HdF" id="gUu-Gv-mqZ"/>
-                            <outlet property="delegate" destination="QZd-Jf-HdF" id="xHo-ZY-Sch"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Pqj-5h-kyL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <viewLayoutGuide key="safeArea" id="lfi-MF-F8i"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eqJ-1A-Wv5"/>
+                    <connections>
+                        <outlet property="horoscopeTextView" destination="2Q1-oJ-IR4" id="RRH-Z1-ggs"/>
+                        <outlet property="intensityLabel" destination="EAm-Ms-JJ8" id="u5S-bV-PeS"/>
+                        <outlet property="moodLabel" destination="ObF-zp-i12" id="NuS-1y-SfP"/>
+                        <outlet property="sunLabel" destination="1X6-9C-aY1" id="l2r-vq-LIP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xwj-HW-1bA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4012" y="444"/>
+            <point key="canvasLocation" x="1957.9710144927537" y="-622.09821428571422"/>
         </scene>
         <!--Horoscopes-->
         <scene sceneID="VeC-aA-Aey">
@@ -155,6 +158,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="c0W-Ck-qMK" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iLq-OP-WC0">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -178,11 +182,7 @@
                         <viewLayoutGuide key="safeArea" id="LoI-Zb-GOa"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Horoscope" id="I0e-Lq-ib3">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="piC-wY-tqG">
-                            <connections>
-                                <segue destination="QZd-Jf-HdF" kind="presentation" id="nEy-GX-vfe"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="piC-wY-tqG"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L0d-7K-FaC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -209,7 +209,4 @@
             <point key="canvasLocation" x="1048" y="826"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="KwF-lk-Bff"/>
-    </inferredMetricsTieBreakers>
 </document>

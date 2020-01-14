@@ -27,6 +27,13 @@ class HoroscopeVC: UIViewController {
         loadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let horoscopeDetail = segue.destination as? DetailViewController, let indexPath = tableView.indexPathForSelectedRow else {
+            fatalError("could not segue properly.")
+        }
+        horoscopeDetail.horoscope = horoscopes[indexPath.row]
+    }
+    
     private func loadData() {
         HoroscopeAPICient.getHoroscopes() { [weak self] (result) in
             switch result {
