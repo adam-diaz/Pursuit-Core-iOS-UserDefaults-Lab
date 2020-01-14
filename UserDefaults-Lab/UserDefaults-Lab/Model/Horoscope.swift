@@ -12,7 +12,7 @@ struct Horoscope: Codable {
     var sunsign: String
     var date: String
     var horoscope: String
-    var meta: [Meta]
+    var meta: Meta
 }
 
 struct Meta: Codable {
