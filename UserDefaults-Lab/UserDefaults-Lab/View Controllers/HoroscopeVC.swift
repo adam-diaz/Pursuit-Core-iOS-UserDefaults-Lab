@@ -29,7 +29,8 @@ class HoroscopeVC: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let horoscopeDetail = segue.destination as? DetailViewController, let indexPath = tableView.indexPathForSelectedRow else {
-            fatalError("could not segue properly.")
+//            fatalError("could not segue properly.")
+            return
         }
         horoscopeDetail.horoscope = horoscopes[indexPath.row]
     }
